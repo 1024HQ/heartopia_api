@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XD Paylink Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">XD WEBPAY TOOL</p>
+          <h1>สร้างลิงก์ชำระเงิน</h1>
+          <p class="sub">Heartopia Payment Generator</p>
+        </div>
+        <div class="hero-orb" aria-hidden="true"></div>
+      </section>
+
+      <section class="panel form-panel">
+        <div class="section-head">
+          <div>
+            <p class="step">1</p>
+            <h2>ข้อมูลผู้เล่น</h2>
+          </div>
+          <button class="ghost-btn" id="resetBtn" type="button">Reset</button>
+        </div>
+
+        <form id="queryForm" class="form-grid">
+          <label>
+            <span>AID(userId)</span>
+            <input id="userId" name="userId" value="840968617561686017" autocomplete="off" required />
+          </label>
+          <label>
+            <span>UID(roleId)</span>
+            <input id="roleId" name="roleId" value="39p162pg" autocomplete="off" required />
+          </label>
+          <label>
+            <span>ServerID</span>
+            <select id="serverId" name="serverId">
+              <option value="sgp-prod">SEA / sgp-prod</option>
+              <option value="fra-prod">Global / fra-prod</option>
+              <option value="va-prod">America / va-prod</option>
+              <option value="jp-prod">Asia / jp-prod</option>
+              <option value="hk-prod">TW,HK,MO / hk-prod</option>
+            </select>
+          </label>
+          <div class="field-block region-field">
+            <div class="field-title">
+              <span>RegionPay</span>
+              <label class="switch-row compact-switch" title="เปิดเพื่อกรอก RegionPay เอง">
+                <input id="customRegionEnabled" type="checkbox" />
+                <span class="switch-track"><span class="switch-thumb"></span></span>
+                <span>กรอกเอง</span>
+              </label>
+            </div>
+            <div class="region-row">
+              <select id="region" name="region">
+                <option value="TH">TH</option>
+                <option value="US">US</option>
+                <option value="JP">JP</option>
+                <option value="TW">TW</option>
+                <option value="EU">EU</option>
+                <option value="ID">ID</option>
+                <option value="CN">CN</option>
+                <option value="VN">VN</option>
+                <option value="SG">SG</option>
+              </select>
+              <input id="regionCustom" name="regionCustom" placeholder="เช่น MY" autocomplete="off" disabled />
+            </div>
+          </div>
+          <button class="primary-btn wide" id="loadBtn" type="submit">
+            <span class="btn-glow"></span>
+            ตกลง / ดึงรายการสินค้า
+          </button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="step">2</p>
+            <h2>Product</h2>
+          </div>
+          <p class="status" id="productStatus">รอกรอกข้อมูล</p>
+        </div>
+        <div id="productGroups" class="product-area empty-state">ยังไม่มีรายการสินค้า</div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="step">3</p>
+            <h2>ช่องทางชำระเงิน</h2>
+          </div>
+          <div class="channel-tools">
+            <p class="status" id="channelStatus">เลือก Product ก่อน</p>
+            <label class="switch-row" title="เปิดเพื่อแสดงทุกช่องทางเรียงต่อกัน">
+              <input id="flatChannels" type="checkbox" checked />
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+              <span>เรียงต่อกัน</span>
+            </label>
+          </div>
+        </div>
+        <div id="channels" class="channel-area empty-state">ยังไม่ได้เลือกสินค้า</div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="step">4</p>
+            <h2>สร้างบิลชำระ</h2>
+          </div>
+        </div>
+        <div class="create-row">
+          <label>
+            <span>Quantity</span>
+            <input id="quantity" min="1" max="99" type="number" value="1" />
+          </label>
+          <button class="primary-btn" id="createBtn" type="button" disabled>สร้างบิลชำระ</button>
+        </div>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="section-head">
+          <div>
+            <p class="step">5</p>
+            <h2>Paylink</h2>
+          </div>
+          <button class="ghost-btn" id="copyBtn" type="button" disabled>Copy</button>
+        </div>
+        <input id="payUrl" class="paylink-input" readonly placeholder="payUrl จะขึ้นตรงนี้" />
+        <div id="resultDetails" class="details-grid"></div>
+        <pre id="rawResult" class="raw-box"></pre>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

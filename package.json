@@ -1,0 +1,18 @@
+{
+  "name": "xd-paylink-generator",
+  "version": "1.0.0",
+  "description": "Node.js web UI for querying XD products, payment channels, and generating paylinks.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "server.js": "^1.0.0"
+  },
+  "license": "UNLICENSED"
+}
