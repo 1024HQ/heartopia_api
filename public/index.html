@@ -10,8 +10,8 @@
     <main class="shell">
       <section class="hero">
         <div>
-          <p class="eyebrow">XD WEBPAY TOOL</p>
-          <h1>สร้างลิงก์ชำระเงิน</h1>
+          <p class="eyebrow">HTP WEBPAY TOOLS</p>
+          <h1>EASY HTP PAYMENT</h1>
           <p class="sub">Heartopia Payment Generator</p>
         </div>
         <div class="hero-orb" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
         <div class="section-head">
           <div>
             <p class="step">1</p>
-            <h2>ข้อมูลผู้เล่น</h2>
+            <h2>Character Input</h2>
           </div>
           <button class="ghost-btn" id="resetBtn" type="button">Reset</button>
         </div>
@@ -82,34 +82,34 @@
             <p class="step">2</p>
             <h2>Product</h2>
           </div>
-          <p class="status" id="productStatus">รอกรอกข้อมูล</p>
+          <p class="status" id="productStatus">Waiting for input</p>
         </div>
-        <div id="productGroups" class="product-area empty-state">ยังไม่มีรายการสินค้า</div>
+        <div id="productGroups" class="product-area empty-state">No product list.</div>
       </section>
 
       <section class="panel">
         <div class="section-head">
           <div>
             <p class="step">3</p>
-            <h2>ช่องทางชำระเงิน</h2>
+            <h2>Payment List</h2>
           </div>
           <div class="channel-tools">
-            <p class="status" id="channelStatus">เลือก Product ก่อน</p>
-            <label class="switch-row" title="เปิดเพื่อแสดงทุกช่องทางเรียงต่อกัน">
+            <p class="status" id="channelStatus">Select the product first.</p>
+            <label class="switch-row" title="display all channels">
               <input id="flatChannels" type="checkbox" checked />
               <span class="switch-track"><span class="switch-thumb"></span></span>
-              <span>เรียงต่อกัน</span>
+              <span>Arranged in row</span>
             </label>
           </div>
         </div>
-        <div id="channels" class="channel-area empty-state">ยังไม่ได้เลือกสินค้า</div>
+        <div id="channels" class="channel-area empty-state">No products selected yet.</div>
       </section>
 
       <section class="panel">
         <div class="section-head">
           <div>
             <p class="step">4</p>
-            <h2>สร้างบิลชำระ</h2>
+            <h2>Create Bill</h2>
           </div>
         </div>
         <div class="create-row">
@@ -117,7 +117,7 @@
             <span>Quantity</span>
             <input id="quantity" min="1" max="99" type="number" value="1" />
           </label>
-          <button class="primary-btn" id="createBtn" type="button" disabled>สร้างบิลชำระ</button>
+          <button class="primary-btn" id="createBtn" type="button" disabled>Create Bill</button>
         </div>
       </section>
 
@@ -129,7 +129,7 @@
           </div>
           <button class="ghost-btn" id="copyBtn" type="button" disabled>Copy</button>
         </div>
-        <input id="payUrl" class="paylink-input" readonly placeholder="payUrl จะขึ้นตรงนี้" />
+        <input id="payUrl" class="paylink-input" readonly placeholder="payUrl is here!" />
         <div id="resultDetails" class="details-grid"></div>
         <pre id="rawResult" class="raw-box"></pre>
       </section>
